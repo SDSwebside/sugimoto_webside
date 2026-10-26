@@ -25,7 +25,7 @@ export function SiteHeader() {
       <header className="site-header">
         <div className="container site-header__inner">
           <NavLink className="brand" to="/" aria-label="杉鼎森數位工程首頁" onClick={closeMenu}>
-            <span className="brand__mark"><img src="/assets/brand-logo.png" alt="" width="44" height="44" /></span>
+            <span className="brand__mark"><img src="/assets/brand-mark.png" alt="" width="40" height="40" /></span>
             <span className="brand__text"><strong>杉鼎森數位工程</strong><small>SHAN DING SEN DIGITAL TECH</small></span>
           </NavLink>
           <button
