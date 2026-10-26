@@ -5,18 +5,19 @@
 ## 頁面
 
 - `index.html`：LOGO 開場與正式首頁。首次進入點擊 LOGO，男孩插圖旁的四張功能卡會從中心向外展開；同一瀏覽器分頁期間再次回首頁會略過開場，首頁提供「重新播放開場動畫」。
-- `portfolio.html`：四個左右交錯的作品區塊。
-- `services.html`：五項服務與合作流程。
-- `cip.html`：CIP 介紹、個人／企業 IP 路徑及四階段課程。
-- `about.html`：團隊欄位與聯絡方式。
+- `portfolio.html`：四個左右交錯的作品區塊與專案諮詢區。
+- `services.html`：五項服務、四階段工程交付與互動式規模概估。
+- `cip.html`：CIP 介紹、個人／企業 IP 路徑及含時數、授課方式與設計稿價格的四階段課程。
+- `about.html`：團隊欄位、聯絡方式及高雄、桃園兩處辦公室地圖。
 - `register.html?course=seminar|beginner|intermediate|advanced`：各課程的報名意向頁。
 
 ## 上線前需要替換
 
-1. `about.html` 與首頁的 LINE QR Code 預留區：放入官方 QR Code 與連結。
+1. 新的 LINE 官方帳號開通後，將各頁面的 LINE 預留卡換成新帳號 QR Code、ID 與加好友連結。目前沒有放舊設計稿的示意 QR 圖或舊 ID。
 2. `about.html` 團隊卡：放入實際姓名、照片與職務資訊。
 3. `cip.html` 四個課程卡目前連到站內報名意向頁。若已有正式報名網址，直接替換各卡片的 `href`。
 4. `register.html` 和 `main.js` 的報名方式目前會開啟電子郵件軟體，收件地址 `contact@shandingsen.com` 取自設計稿，請確認後再正式啟用；如需線上送出，應接入後端或表單服務。
-5. CIP 認證機構、授證條件、實際課程內容及案例資料，請於公開上線前核對。
+5. CIP 認證機構、授證條件、實際課程內容及設計稿價格，請於公開上線前核對。
+6. 設計稿提供的電話 `02-2798-8980`、電子郵件 `contact@shandingsen.com` 與服務時間也請確認。高雄和桃園辦公室地址已依使用者提供資訊更新。
 
 `assets/` 中的品牌標誌、插圖和作品圖取自提供的 `disign` 設計資料夾。網站使用 Google Fonts，離線時會自動退回系統字體。

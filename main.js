@@ -21,7 +21,7 @@ if (headerHost) {
 
 const footerHost = document.querySelector('[data-site-footer]');
 if (footerHost) {
-  footerHost.innerHTML = `<footer class="site-footer"><div class="container"><div class="footer-top"><div><span class="eyebrow">EXPLORE MORE</span><h2>核心導覽入口</h2><p>探索杉鼎森的作品與數位工程服務</p></div><span class="footer-top__aside">SHAN DING SEN<br>DIGITAL ENGINEERING</span></div><nav class="footer-links" aria-label="頁尾導覽">${links.slice(1).map(([, label, href], index) => `<a href="${href}"><span>0${index + 1}</span>${label} <span aria-hidden="true">↗</span></a>`).join('')}</nav><div class="footer-bottom"><strong>杉鼎森數位工程有限公司<br><small>Shan Ding Sen Digital Technology Co., Ltd.</small></strong><span>© <span data-year></span> Shan Ding Sen Digital Technology Co., Ltd.</span></div></div></footer>`;
+  footerHost.innerHTML = `<footer class="site-footer"><div class="container"><div class="footer-top"><div><span class="eyebrow">EXPLORE MORE</span><h2>核心導覽入口</h2><p>探索杉鼎森的作品與數位工程服務</p></div><span class="footer-top__aside">SHAN DING SEN<br>DIGITAL ENGINEERING</span></div><nav class="footer-links" aria-label="頁尾導覽">${links.slice(1).map(([, label, href], index) => `<a href="${href}"><span>0${index + 1}</span>${label} <span aria-hidden="true">↗</span></a>`).join('')}</nav><div class="footer-offices"><span><strong>高雄辦公室</strong>80341 高雄市鹽埕區中山里新樂街214號2樓</span><span><strong>桃園辦公室</strong>330 桃園市桃園區中正路1249號21樓</span></div><div class="footer-bottom"><strong>杉鼎森數位工程有限公司<br><small>Shan Ding Sen Digital Technology Co., Ltd.</small></strong><span>© <span data-year></span> Shan Ding Sen Digital Technology Co., Ltd.</span></div></div></footer>`;
 }
 
 document.querySelectorAll('[data-year]').forEach((node) => { node.textContent = String(new Date().getFullYear()); });
@@ -124,11 +124,22 @@ if (intro && shell) {
   });
 }
 
+const scopeOptions = document.getElementById('scope-options');
+if (scopeOptions) {
+  const output = document.getElementById('scope-duration');
+  const updateScope = () => {
+    const count = scopeOptions.querySelectorAll('input:checked').length;
+    output.textContent = count ? `${3 + (count - 1) * 2} – ${5 + (count - 1) * 2}` : '—';
+  };
+  scopeOptions.addEventListener('change', updateScope);
+  updateScope();
+}
+
 const courses = {
-  seminar: ['研習會｜認識 CIP 與 IP 打造', '了解認證與個人／企業 IP 的整體路徑。'],
-  beginner: ['初階課程｜找到你的專業定位', '建立受眾、優勢與品牌主張的基礎。'],
-  intermediate: ['中階課程｜內容與數位工具整合', '從內容策略延伸到網站與自動化工具。'],
-  advanced: ['高階課程｜從上線走向長期經營', '規劃協作、流程與持續成長的架構。'],
+  seminar: ['CIP 研習會：AI 時代數位品牌啟發', '3 小時密集工作坊 · 設計稿參考費用 NT$ 1,200'],
+  beginner: ['初階課程：個人 IP 核心定位與自媒體框架', '12 小時（分 4 模組）· 設計稿參考費用 NT$ 9,800'],
+  intermediate: ['中階課程：內容自動化產出與機器人整合實作', '24 小時（含 8 次工作坊）· 設計稿參考費用 NT$ 22,800'],
+  advanced: ['高階課程：企業級 IP 商業模式與 CIP 認證考核', '36 小時＋輔導答辯 · 設計稿參考費用 NT$ 46,000'],
 };
 const registrationForm = document.getElementById('registration-form');
 if (registrationForm) {
