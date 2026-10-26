@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { SiteFooter } from './components/SiteFooter';
 import { SiteHeader } from './components/SiteHeader';
+import { ScrollToTop } from './components/ScrollToTop';
 import { useReveal } from './hooks/useReveal';
 import { AboutPage } from './features/about/AboutPage';
 import { CipPage } from './features/cip/CipPage';
@@ -49,6 +50,7 @@ function AppRoutes() {
 
   return (
     <>
+      <ScrollToTop />
       <SiteHeader />
       <main id="main">
         <Routes>
