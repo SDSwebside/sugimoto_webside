@@ -1,118 +1,17 @@
 <!doctype html>
 <html lang="zh-Hant">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f8f7f4">
-  <meta name="description" content="杉鼎森數位工程，結合建築級的精準結構與數位技術，打造值得信任的網站與企業系統。">
-  <title>杉鼎森數位工程｜首頁</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="main.js"></script>
-</head>
-<body class="home-page intro-active" data-page="home">
-  <div class="intro" id="intro" role="dialog" aria-modal="true" aria-labelledby="intro-title">
-    <div class="intro__grain" aria-hidden="true"></div>
-    <div class="intro__inner">
-      <span class="eyebrow intro__eyebrow"><span class="eyebrow__dot"></span> SHAN DING SEN · DIGITAL ENGINEERING</span>
-      <button class="intro__logo-button" id="enter-site" type="button" aria-label="點擊杉鼎森標誌進入網站">
-        <img src="assets/brand-logo.png" alt="杉鼎森標誌：森林、鼎與電路圖形" width="720" height="645">
-        <span class="intro__orbit intro__orbit--one" aria-hidden="true"></span>
-        <span class="intro__orbit intro__orbit--two" aria-hidden="true"></span>
-      </button>
-      <h1 id="intro-title">讓每一個構想，<br>都有穩固的數位根基。</h1>
-      <p>從品牌網站到企業系統，讓靈感與工程一起成長。</p>
-      <button class="button button--dark intro__enter" id="enter-site-secondary" type="button">點擊標誌・進入網站 <span aria-hidden="true">↗</span></button>
-      <span class="intro__hint">SCROLL DOWN TO EXPLORE <span aria-hidden="true">↓</span></span>
-    </div>
-  </div>
-
-  <div class="site-shell" id="site-shell" inert>
-    <a class="skip-link" href="#main">跳到主要內容</a>
-    <header class="site-header">
-      <div class="container site-header__inner">
-        <a class="brand" href="index.html" aria-label="杉鼎森數位工程首頁">
-          <span class="brand__mark"><img src="assets/brand-logo.png" alt="" width="44" height="44"></span>
-          <span class="brand__text"><strong>杉鼎森數位工程</strong><small>SHAN DING SEN DIGITAL TECH</small></span>
-        </a>
-        <button class="menu-toggle" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button>
-        <nav class="primary-nav" id="primary-nav" aria-label="主要導覽">
-          <a class="is-current" aria-current="page" href="index.html">首頁</a>
-          <a href="portfolio.html">作品介紹</a>
-          <a href="services.html">服務項目</a>
-          <a href="cip.html">CIP 課程</a>
-          <a href="about.html">關於我們</a>
-        </nav>
-        <a class="button button--dark header-cta" href="#contact">聯絡我們 <span aria-hidden="true">↗</span></a>
-      </div>
-    </header>
-
-    <main id="main">
-      <section class="home-hero container" aria-labelledby="home-title">
-        <div class="home-hero__heading" data-reveal>
-          <span class="eyebrow"><span class="eyebrow__dot"></span> DIGITAL ENGINEERING LAB</span>
-          <h1 id="home-title">靈感進發，<br><em>工程成形。</em></h1>
-          <p>從一個想法，到真正可運作的數位體驗。<br>我們把品牌的溫度，寫進每一個精準的系統細節。</p>
-        </div>
-        <div class="burst-stage burst-stage--pending" id="burst-stage" aria-label="網站四大功能入口">
-          <a class="burst-card burst-card--portfolio" href="portfolio.html" style="--card-order:0">
-            <span class="burst-card__number">01 / PORTFOLIO</span>
-            <span class="burst-card__icon" aria-hidden="true">▦</span>
-            <span class="burst-card__bottom"><strong>作品介紹</strong><span aria-hidden="true">↗</span></span>
-            <small>看見想法如何成為作品</small>
-          </a>
-          <a class="burst-card burst-card--services" href="services.html" style="--card-order:1">
-            <span class="burst-card__number">02 / SERVICES</span>
-            <span class="burst-card__icon" aria-hidden="true">⌘</span>
-            <span class="burst-card__bottom"><strong>我們提供的服務</strong><span aria-hidden="true">↗</span></span>
-            <small>讓系統回應真正的需求</small>
-          </a>
-          <div class="burst-stage__center" id="burst-center">
-            <span class="burst-stage__ring burst-stage__ring--one" aria-hidden="true"></span>
-            <span class="burst-stage__ring burst-stage__ring--two" aria-hidden="true"></span>
-            <div class="boy-card">
-              <img src="assets/boy-illustration.png" alt="戴眼鏡、充滿靈感的男孩黑白插畫，周圍有科技與生活元素" width="1024" height="1536">
-              <span class="boy-card__label"><span class="eyebrow__dot"></span> 將靈感變成真實</span>
-            </div>
-          </div>
-          <a class="burst-card burst-card--cip" href="cip.html" style="--card-order:2">
-            <span class="burst-card__number">03 / CIP ACADEMY</span>
-            <span class="burst-card__icon" aria-hidden="true">✳</span>
-            <span class="burst-card__bottom"><strong>CIP 課程報名</strong><span aria-hidden="true">↗</span></span>
-            <small>從個人 IP 到企業品牌</small>
-          </a>
-          <a class="burst-card burst-card--about" href="about.html" style="--card-order:3">
-            <span class="burst-card__number">04 / ABOUT US</span>
-            <span class="burst-card__icon" aria-hidden="true">◉</span>
-            <span class="burst-card__bottom"><strong>關於我們</strong><span aria-hidden="true">↗</span></span>
-            <small>認識打造作品的人</small>
-          </a>
-        </div>
-        <button class="replay-link" type="button" id="replay-intro">↺ 重新播放開場動畫</button>
-      </section>
-
-      <section class="statement-band" aria-label="品牌理念">
-        <div class="container statement-band__inner" data-reveal>
-          <span>ROOTED IN IDEAS</span>
-          <p>以建築思維規劃結構，<br>以數位工程實現可能。</p>
-          <span>BUILT FOR WHAT'S NEXT</span>
-        </div>
-      </section>
-
-      <section class="section container home-preview" aria-labelledby="preview-title">
-        <div class="section-heading" data-reveal><span class="eyebrow"><span class="eyebrow__dot"></span> WHAT WE BUILD</span><h2 id="preview-title">精準落地的數位解方</h2><p>從首次接觸，到長期運作，我們讓每一段數位旅程都更清晰。</p></div>
-        <div class="preview-grid">
-          <a class="preview-card" href="portfolio.html" data-reveal><img src="assets/project-1.jpg" alt="建築品牌網站展示於桌上螢幕與平板" width="512" height="288" loading="lazy"><div><span>SELECTED WORK / 01</span><h3>品牌網站與數位體驗</h3><span class="round-arrow" aria-hidden="true">↗</span></div></a>
-          <a class="preview-card" href="services.html" data-reveal><img src="assets/project-2.jpg" alt="企業進銷存管理系統於桌上螢幕展示" width="512" height="288" loading="lazy"><div><span>ENGINEERING / 02</span><h3>讓系統成為企業的助力</h3><span class="round-arrow" aria-hidden="true">↗</span></div></a>
-        </div>
-      </section>
-
-      <section class="contact-strip section" id="contact" aria-labelledby="contact-title"><div class="container contact-strip__inner" data-reveal><div><span class="eyebrow"><span class="eyebrow__dot"></span> START A CONVERSATION</span><h2 id="contact-title">下一個想法，<br>一起完成。</h2><p>網站、企業系統、LINE AI 或 CIP 課程，歡迎和我們聊聊。</p><a class="button button--dark" href="about.html#contact">查看聯絡方式 ↗</a></div><div class="contact-placeholder"><span class="contact-placeholder__icon" aria-hidden="true">LINE</span><strong>新的 LINE 官方帳號申請中</strong><small>開通後置入 QR Code</small></div></div></section>
-    </main>
-
-    <footer class="site-footer"><div class="container"><div class="footer-top"><div><span class="eyebrow">EXPLORE MORE</span><h2>核心導覽入口</h2><p>探索杉鼎森的作品與數位工程服務</p></div><span class="footer-top__aside">SHAN DING SEN<br>DIGITAL ENGINEERING</span></div><nav class="footer-links" aria-label="頁尾導覽"><a href="portfolio.html"><span>01</span>作品介紹 <span aria-hidden="true">↗</span></a><a href="services.html"><span>02</span>服務項目 <span aria-hidden="true">↗</span></a><a href="cip.html"><span>03</span>CIP 課程 <span aria-hidden="true">↗</span></a><a href="about.html"><span>04</span>關於我們 <span aria-hidden="true">↗</span></a></nav><div class="footer-offices"><span><strong>高雄辦公室</strong>80341 高雄市鹽埕區中山里新樂街214號2樓</span><span><strong>桃園辦公室</strong>330 桃園市桃園區中正路1249號21樓</span></div><div class="footer-bottom"><strong>杉鼎森數位工程有限公司<br><small>Shan Ding Sen Digital Technology Co., Ltd.</small></strong><span>© <span data-year></span> Shan Ding Sen Digital Technology Co., Ltd.</span></div></div></footer>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8f7f4" />
+    <meta name="description" content="杉鼎森數位工程，結合建築級的精準結構與數位技術，打造值得信任的網站與企業系統。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet" />
+    <title>杉鼎森數位工程｜首頁</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
