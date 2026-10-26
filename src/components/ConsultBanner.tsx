@@ -15,15 +15,15 @@ export function ConsultBanner({ eyebrow, title, description }: ConsultBannerProp
         <h2>{title}</h2>
         <p>{description}</p>
         <div className="consult-banner__facts">
-          <span>LINE 官方帳號：<strong>申請中</strong></span>
+          <span>LINE 官方帳號：<strong>歡迎加入</strong></span>
           <span>服務時間：平日 09:30 - 18:30</span>
         </div>
         <Link className="button button--dark" to="/about#contact">與我們聯絡 ↗</Link>
       </div>
       <div className="consult-banner__qr">
-        <span className="consult-banner__qr-slot" aria-hidden="true">LINE</span>
-        <strong>官方帳號申請中</strong>
-        <small>開通後置入 QR Code</small>
+        <img className="consult-banner__qr-code" src="/assets/SDS-line.png" alt="杉鼎森 LINE 官方帳號 QR Code" width="540" height="540" />
+        <strong>加入 LINE 官方帳號</strong>
+        <small>掃描 QR Code 與我們聯絡</small>
       </div>
     </section>
   );
