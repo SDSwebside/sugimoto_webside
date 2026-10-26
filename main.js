@@ -11,7 +11,7 @@ const links = [
 
 const headerHost = document.querySelector('[data-site-header]');
 if (headerHost) {
-  headerHost.innerHTML = `<header class="site-header"><div class="container site-header__inner">
+  headerHost.outerHTML = `<header class="site-header"><div class="container site-header__inner">
     <a class="brand" href="index.html" aria-label="杉鼎森數位工程首頁"><span class="brand__mark"><img src="assets/brand-logo.png" alt="" width="44" height="44"></span><span class="brand__text"><strong>杉鼎森數位工程</strong><small>SHAN DING SEN DIGITAL TECH</small></span></a>
     <button class="menu-toggle" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button>
     <nav class="primary-nav" id="primary-nav" aria-label="主要導覽">${links.map(([key, label, href]) => `<a href="${href}"${key === currentPage ? ' class="is-current" aria-current="page"' : ''}>${label}</a>`).join('')}</nav>
