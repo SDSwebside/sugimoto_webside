@@ -1,6 +1,8 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Eyebrow } from '../../components/Eyebrow';
 import { PageHero } from '../../components/PageHero';
+import type { ArticleSummary } from './types';
 
 const topics = [
   {
@@ -21,6 +23,25 @@ const topics = [
 ];
 
 export function JournalPage() {
+  const [articles, setArticles] = useState<ArticleSummary[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch('/api/articles', { signal: controller.signal })
+      .then(async (response) => {
+        const result = await response.json() as { articles?: ArticleSummary[]; error?: string };
+        if (!response.ok) throw new Error(result.error || '無法載入文章。');
+        setArticles(result.articles || []);
+      })
+      .catch((cause) => {
+        if (cause.name !== 'AbortError') setError('目前無法載入文章，請稍後再試。');
+      })
+      .finally(() => { if (!controller.signal.aborted) setLoading(false); });
+    return () => controller.abort();
+  }, []);
+
   return (
     <>
       <PageHero
@@ -53,7 +74,15 @@ export function JournalPage() {
           <Eyebrow showDot>ARTICLES</Eyebrow>
           <h2 id="journal-posts-title">最新文章</h2>
         </div>
-        <div className="journal-empty" data-reveal>
+        {loading && <p role="status">載入文章中…</p>}
+        {error && <p className="admin-error" role="alert">{error}</p>}
+        {articles.length > 0 && <div className="journal-article-grid">
+          {articles.map((article) => <Link className="journal-article-card" to={`/journal/${article.id}`} key={article.id}>
+            {article.coverImageId && <img src={`/api/images/${article.coverImageId}`} alt="" loading="lazy" />}
+            <div><time dateTime={article.publishedAt}>{new Date(article.publishedAt).toLocaleDateString('zh-TW')}</time><h3>{article.title}</h3><p>{article.summary}</p><span>閱讀文章 ↗</span></div>
+          </Link>)}
+        </div>}
+        {!loading && !error && articles.length === 0 && <div className="journal-empty" data-reveal>
           <span aria-hidden="true">✳</span>
           <h3>文章整理中</h3>
           <p>第一篇文章發布後，會在這裡依發布時間顯示。課程與服務資訊可先從其他頁面查看。</p>
@@ -61,7 +90,7 @@ export function JournalPage() {
             <Link className="button button--dark" to="/services">查看服務項目 ↗</Link>
             <Link className="button button--light" to="/cip">了解 CIP 培訓 ↗</Link>
           </div>
-        </div>
+        </div>}
       </section>
     </>
   );

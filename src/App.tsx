@@ -9,6 +9,7 @@ import { AdminPage } from './features/admin/AdminPage';
 import { CipPage } from './features/cip/CipPage';
 import { HomePage } from './features/home/HomePage';
 import { JournalPage } from './features/journal/JournalPage';
+import { ArticlePage } from './features/journal/ArticlePage';
 import { PortfolioPage } from './features/portfolio/PortfolioPage';
 import { RegisterPage } from './features/register/RegisterPage';
 import { ServicesPage } from './features/services/ServicesPage';
@@ -69,6 +70,7 @@ function AppRoutes() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/cip" element={<CipPage />} />
           <Route path="/journal" element={<JournalPage />} />
+          <Route path="/journal/:id" element={<ArticlePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/admin" element={<AdminPage />} />

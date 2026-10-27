@@ -36,7 +36,9 @@ export function RegisterPage() {
           website: form.get('website'),
         }),
       });
-      const result = await response.json() as { receiptCode?: string; error?: string };
+      let result: { receiptCode?: string; error?: string };
+      try { result = await response.json() as { receiptCode?: string; error?: string }; }
+      catch { throw new Error('報名系統目前未連線，請稍後再試或透過聯絡頁與我們聯繫。'); }
       if (!response.ok || !result.receiptCode) throw new Error(result.error || '目前無法送出報名申請，請稍後再試。');
       setReceiptCode(result.receiptCode);
       formElement.reset();

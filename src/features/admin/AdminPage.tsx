@@ -1,6 +1,7 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { Eyebrow } from '../../components/Eyebrow';
 import { courseCatalog, type CourseId } from '../cip/data';
+import { ArticleAdmin } from './ArticleAdmin';
 
 type RegistrationStatus = 'new' | 'contacting' | 'confirmed' | 'cancelled';
 
@@ -28,7 +29,7 @@ async function responseJson(response: Response) {
   try {
     return await response.json() as { error?: string; registrations?: Registration[] };
   } catch {
-    throw new Error('本機 API 尚未啟動，請啟動完整開發服務。');
+    throw new Error('API 尚未連線，請確認網站服務與 PostgreSQL。');
   }
 }
 
@@ -85,6 +86,7 @@ export function AdminPage() {
   const [registrations, setRegistrations] = useState<Registration[]>([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [section, setSection] = useState<'registrations' | 'articles'>('registrations');
 
   const loadRegistrations = async () => {
     setLoading(true);
@@ -107,7 +109,7 @@ export function AdminPage() {
         setAuthenticated(true);
         void loadRegistrations();
       }
-    }).catch(() => setError('本機 API 尚未啟動，請啟動完整開發服務。')).finally(() => setChecking(false));
+    }).catch(() => setError('API 尚未連線，請確認網站服務與 PostgreSQL。')).finally(() => setChecking(false));
   }, []);
 
   const login = async (event: FormEvent<HTMLFormElement>) => {
@@ -137,14 +139,17 @@ export function AdminPage() {
 
   return (
     <section className="admin-page container">
-      <div className="admin-page__heading"><Eyebrow showDot>ADMIN CONSOLE</Eyebrow><h1>管理者後台</h1><p>檢視與處理 CIP 課程報名申請。本地版本的資料保存在這台電腦。</p></div>
+      <div className="admin-page__heading"><Eyebrow showDot>ADMIN CONSOLE</Eyebrow><h1>管理者後台</h1><p>管理 CIP 課程報名與工程師的心內話文章。資料保存在 PostgreSQL。</p></div>
       {checking ? <p>確認登入狀態中…</p> : authenticated ? <>
+        <div className="admin-tabs" role="tablist" aria-label="後台功能"><button type="button" role="tab" aria-selected={section === 'registrations'} onClick={() => setSection('registrations')}>課程報名</button><button type="button" role="tab" aria-selected={section === 'articles'} onClick={() => setSection('articles')}>文章管理</button><button className="admin-tabs__logout" type="button" onClick={logout}>登出</button></div>
+        {section === 'articles' ? <ArticleAdmin /> : <>
         <div className="admin-toolbar"><div><h2>報名申請</h2><p>共 {registrations.length} 筆，依送出時間排序。</p></div><div><button className="button button--light" type="button" onClick={loadRegistrations} disabled={loading}>{loading ? '更新中…' : '重新整理'}</button><button className="button button--dark" type="button" onClick={logout}>登出</button></div></div>
         {error && <p className="admin-error" role="alert">{error}</p>}
         {registrations.length === 0 && !loading && !error && <div className="admin-empty">目前沒有報名申請。有人送出表單後，資料會出現在這裡。</div>}
         <div className="admin-registration-list">{registrations.map((registration) => <RegistrationCard registration={registration} key={registration.id} />)}</div>
+        </>}
       </> : <form className="admin-login" onSubmit={login}>
-        <h2>管理者登入</h2><p>請輸入本機管理者密碼。</p>
+        <h2>管理者登入</h2><p>請輸入管理者密碼。</p>
         <label htmlFor="admin-password">密碼</label>
         <input id="admin-password" name="password" type="password" autoComplete="current-password" required />
         <button className="button button--dark" type="submit">登入後台 ↗</button>
