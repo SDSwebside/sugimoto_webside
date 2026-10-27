@@ -8,8 +8,8 @@ export function PortfolioPage() {
     <>
       <PageHero
         eyebrow="SELECTED WORKS · 作品介紹"
-        title={<>讓每一個作品，<br /><em>成為有用的數位體驗。</em></>}
-        description="從品牌網站到企業內部系統，以清楚的架構與細膩的使用體驗，解決真實世界的問題。"
+        title={<>網站與系統<br /><em>開發案例</em></>}
+        description="查看我們的品牌網站、企業管理系統、LINE AI 與資料儀表板案例，了解各類專案的功能與設計方式。"
         index="01"
       />
       <section className="portfolio-list container" aria-label="作品案例">
@@ -31,8 +31,8 @@ export function PortfolioPage() {
       </section>
       <ConsultBanner
         eyebrow="即時線上工程諮詢"
-        title="準備啟動您的下一個數位架構？"
-        description="不論是全新數位平台、既有系統重構，或企業專屬 LINE AI 與 CIP 課程，杉鼎森期待與您討論適合的技術路徑。"
+        title="需要規劃網站或企業系統？"
+        description="告訴我們目前的工作流程與目標，我們可以討論網站開發、系統重構或 LINE AI 整合的做法。"
       />
     </>
   );

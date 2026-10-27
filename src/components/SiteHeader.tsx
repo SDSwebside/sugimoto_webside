@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const links = [
@@ -7,15 +7,11 @@ const links = [
   { to: '/services', label: '服務項目' },
   { to: '/cip', label: 'CIP 課程' },
   { to: '/about', label: '關於我們' },
+  { to: '/journal', label: '工程師的心內話' },
 ];
 
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    document.body.classList.toggle('menu-open', isMenuOpen);
-    return () => document.body.classList.remove('menu-open');
-  }, [isMenuOpen]);
 
   const closeMenu = () => setIsMenuOpen(false);
 

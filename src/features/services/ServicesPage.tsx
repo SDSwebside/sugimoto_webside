@@ -35,12 +35,12 @@ export function ServicesPage() {
     <>
       <PageHero
         eyebrow="ENGINEERING WITH PURPOSE · 服務項目"
-        title={<>從需求出發，<br /><em>把複雜變得清楚。</em></>}
-        description="我們以工程思維梳理流程，以合適的技術打造能長期使用的數位工具。每一項服務都從你的實際工作方式開始。"
+        title={<>網站、企業系統<br /><em>與 AI 整合服務</em></>}
+        description="我們規劃與開發品牌網站、進銷存系統、LINE AI 客服和資料儀表板，也能依現有工作流程串接不同系統。"
         index="02"
       />
       <section className="services-section container" aria-labelledby="services-title">
-        <div className="section-heading" data-reveal><Eyebrow>WHAT WE DO</Eyebrow><h2 id="services-title">五個方向，回應不同階段的需求</h2></div>
+        <div className="section-heading" data-reveal><Eyebrow>WHAT WE DO</Eyebrow><h2 id="services-title">我們提供的五項服務</h2></div>
         <div className="service-grid">
           <ServiceCard className="service-card--featured">
             <div className="service-card__top"><span className="service-card__icon" aria-hidden="true">▧</span><span>01 / WEB EXPERIENCE</span></div>
@@ -83,7 +83,7 @@ export function ServicesPage() {
         <div className="scope-section__copy"><Eyebrow>QUICK PROJECT SCOPE</Eyebrow><h2 id="scope-title">幾秒鐘內估算您的數位轉型規劃</h2><p>選擇您感興趣的模組，先取得概略時程範圍，再與我們討論實際需求。</p><div className="scope-options">{scopeOptions.map(([value, label]) => <label key={value}><input type="checkbox" checked={selectedScopes.includes(value)} onChange={() => toggleScope(value)} /><span>{label}</span></label>)}</div></div>
         <div className="scope-result"><span>ESTIMATED PROJECT SCOPE</span><strong aria-live="polite">{duration}</strong><span>週交付週期概估</span><p>此為介面示意估算，實際時程依訪談、規格與資源配置確認。</p><Link className="button button--light" to="/about#contact">取得專案規劃討論 ↗</Link></div>
       </section>
-      <section className="next-step container" data-reveal><div><Eyebrow>LET'S BUILD TOGETHER</Eyebrow><h2>立即加入杉鼎森，開啟工程對話。</h2><p>從既有系統優化到全新平台建置，歡迎與我們討論。</p></div><Link className="button button--dark" to="/about#contact">洽談合作 <span aria-hidden="true">↗</span></Link></section>
+      <section className="next-step container" data-reveal><div><Eyebrow>LET'S BUILD TOGETHER</Eyebrow><h2>洽談網站或企業系統開發</h2><p>從既有系統優化到全新平台建置，歡迎與我們討論。</p></div><Link className="button button--dark" to="/about#contact">洽談合作 <span aria-hidden="true">↗</span></Link></section>
     </>
   );
 }

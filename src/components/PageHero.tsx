@@ -18,7 +18,7 @@ export function PageHero({ eyebrow, title, description, index, className = '' }:
         <p>{description}</p>
       </div>
       <div className="page-hero__index">
-        {index} <span>/ 04</span>
+        {index} <span>/ 05</span>
       </div>
     </section>
   );
