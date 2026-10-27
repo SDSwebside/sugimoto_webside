@@ -5,8 +5,10 @@ import { SiteHeader } from './components/SiteHeader';
 import { ScrollToTop } from './components/ScrollToTop';
 import { useReveal } from './hooks/useReveal';
 import { AboutPage } from './features/about/AboutPage';
+import { AdminPage } from './features/admin/AdminPage';
 import { CipPage } from './features/cip/CipPage';
 import { HomePage } from './features/home/HomePage';
+import { JournalPage } from './features/journal/JournalPage';
 import { PortfolioPage } from './features/portfolio/PortfolioPage';
 import { RegisterPage } from './features/register/RegisterPage';
 import { ServicesPage } from './features/services/ServicesPage';
@@ -26,15 +28,23 @@ const pageMeta: Record<string, { title: string; description: string }> = {
   },
   '/cip': {
     title: 'CIP 課程報名｜杉鼎森數位工程',
-    description: '了解杉鼎森 CIP 課程，從研習會、初階、中階到高階，規劃個人與企業 IP 的打造與上線路徑。',
+    description: '杉鼎森 CIP 國際職業認證培訓與申請諮詢，了解認證項目、申報條件、考試方式與培訓方向。',
   },
   '/about': {
     title: '關於我們｜杉鼎森數位工程',
     description: '認識杉鼎森數位工程的理念、團隊與合作方式。',
   },
+  '/journal': {
+    title: '工程師的心內話｜杉鼎森數位工程',
+    description: '杉鼎森團隊的工程筆記、專案觀察與團隊札記，分享網站、企業系統及 AI 工具的實務經驗。',
+  },
   '/register': {
     title: '課程報名｜杉鼎森數位工程',
     description: '杉鼎森 CIP 課程報名意向頁。',
+  },
+  '/admin': {
+    title: '管理者後台｜杉鼎森數位工程',
+    description: '杉鼎森管理者後台登入。',
   },
 };
 
@@ -58,8 +68,10 @@ function AppRoutes() {
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/cip" element={<CipPage />} />
+          <Route path="/journal" element={<JournalPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/admin" element={<AdminPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
