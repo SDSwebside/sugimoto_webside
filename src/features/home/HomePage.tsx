@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Eyebrow } from '../../components/Eyebrow';
+import { FeatureIcon } from '../../components/FeatureIcon';
 import { LineQr } from '../../components/LineQr';
 
 function readIntroState() {
@@ -113,11 +114,11 @@ export function HomePage() {
           <p>提供品牌網站、企業系統、LINE AI 與 CIP 培訓服務。<br />協助你規劃、開發並上線可實際使用的數位工具。</p>
         </div>
         <div className={`burst-stage${isStageReady ? '' : ' burst-stage--pending'}`} ref={stageRef} aria-label="網站四大功能入口">
-          <Link className="burst-card burst-card--portfolio" to="/portfolio"><span className="burst-card__number">01 / PORTFOLIO</span><span className="burst-card__icon" aria-hidden="true">▦</span><span className="burst-card__bottom"><strong>作品介紹</strong><span aria-hidden="true">↗</span></span><small>查看網站與系統案例</small></Link>
-          <Link className="burst-card burst-card--services" to="/services"><span className="burst-card__number">02 / SERVICES</span><span className="burst-card__icon" aria-hidden="true">⌘</span><span className="burst-card__bottom"><strong>我們提供的服務</strong><span aria-hidden="true">↗</span></span><small>網站、系統與 AI 開發</small></Link>
+          <Link className="burst-card burst-card--portfolio" to="/portfolio"><span className="burst-card__number">01 / PORTFOLIO</span><span className="burst-card__icon"><FeatureIcon name="portfolio" /></span><span className="burst-card__bottom"><strong>作品介紹</strong><span aria-hidden="true">↗</span></span><small>查看網站與系統案例</small></Link>
+          <Link className="burst-card burst-card--services" to="/services"><span className="burst-card__number">02 / SERVICES</span><span className="burst-card__icon"><FeatureIcon name="services" /></span><span className="burst-card__bottom"><strong>我們提供的服務</strong><span aria-hidden="true">↗</span></span><small>網站、系統與 AI 開發</small></Link>
           <div className="burst-stage__center"><span className="burst-stage__ring burst-stage__ring--one" aria-hidden="true" /><span className="burst-stage__ring burst-stage__ring--two" aria-hidden="true" /><div className="boy-card"><img src="/assets/boy-illustration.png" alt="戴眼鏡、充滿靈感的男孩黑白插畫，周圍有科技與生活元素" width="1024" height="1536" /><span className="boy-card__label"><span className="eyebrow__dot" /> 將靈感變成真實</span></div></div>
-          <Link className="burst-card burst-card--cip" to="/cip"><span className="burst-card__number">03 / CIP ACADEMY</span><span className="burst-card__icon" aria-hidden="true">✳</span><span className="burst-card__bottom"><strong>CIP 認證培訓</strong><span aria-hidden="true">↗</span></span><small>了解課程與申請方向</small></Link>
-          <Link className="burst-card burst-card--about" to="/about"><span className="burst-card__number">04 / ABOUT US</span><span className="burst-card__icon" aria-hidden="true">◉</span><span className="burst-card__bottom"><strong>關於我們</strong><span aria-hidden="true">↗</span></span><small>認識打造作品的人</small></Link>
+          <Link className="burst-card burst-card--cip" to="/cip"><span className="burst-card__number">03 / CIP ACADEMY</span><span className="burst-card__icon"><FeatureIcon name="cip" /></span><span className="burst-card__bottom"><strong>CIP 認證培訓</strong><span aria-hidden="true">↗</span></span><small>了解課程與申請方向</small></Link>
+          <Link className="burst-card burst-card--about" to="/about"><span className="burst-card__number">04 / ABOUT US</span><span className="burst-card__icon"><FeatureIcon name="about" /></span><span className="burst-card__bottom"><strong>關於我們</strong><span aria-hidden="true">↗</span></span><small>認識打造作品的人</small></Link>
         </div>
         <button className="replay-link" type="button" onClick={replayIntro}>↺ 重新播放開場動畫</button>
       </section>
