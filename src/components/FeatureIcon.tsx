@@ -14,11 +14,7 @@ export function FeatureIcon({ name }: FeatureIconProps) {
         </>
       )}
       {name === 'services' && (
-        <>
-          <path d="M18 6a2 2 0 1 0-4 0v12a2 2 0 1 0 4 0V6Z" />
-          <path d="M6 18a2 2 0 1 0 4 0V6a2 2 0 1 0-4 0v12Z" />
-          <path d="M6 6h12M6 18h12" />
-        </>
+        <path d="M18 8a3 3 0 1 0-3-3v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V5a3 3 0 1 0-3 3h12Z" />
       )}
       {name === 'cip' && (
         <>
