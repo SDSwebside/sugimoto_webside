@@ -62,6 +62,7 @@ export const portfolioProjects: PortfolioProject[] = [
     tags: ['LINE 官方帳號', 'AI 問答', '流程自動化'],
     noteTitle: '自然互動',
     noteDescription: '把服務帶進使用者已習慣的場景',
+    imageFit: 'contain',
   },
   {
     id: 'techbrief-platform',
