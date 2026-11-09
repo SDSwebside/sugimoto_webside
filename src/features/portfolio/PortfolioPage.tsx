@@ -9,15 +9,29 @@ export function PortfolioPage() {
       <PageHero
         eyebrow="SELECTED WORKS · 作品介紹"
         title={<>網站與系統<br /><em>開發案例</em></>}
-        description="查看我們的品牌網站、企業管理系統、LINE AI 與資料儀表板案例，了解各類專案的功能與設計方式。"
+        description="查看我們的品牌網站、企業管理系統、LINE AI 與 AI 內容平台案例，了解各類專案的功能與設計方式。"
         index="01"
       />
       <section className="portfolio-list container" aria-label="作品案例">
         {portfolioProjects.map((project) => (
-          <article className={`project${project.isReverse ? ' project--reverse' : ''}`} data-reveal key={project.id}>
-            <div className="project__image">
-              <img src={`/assets/${project.image}`} alt={project.imageAlt} width="512" height="288" loading="lazy" />
-              <span>{project.category}</span>
+          <article className={`project${project.isReverse ? ' project--reverse' : ''}${project.gallery ? ' project--has-gallery' : ''}`} data-reveal key={project.id}>
+            <div className="project__media">
+              <div className={`project__image${project.imageFit === 'contain' ? ' project__image--contain' : ''}`}>
+                <img src={`/assets/${project.image}`} alt={project.imageAlt} width="1600" height="1000" loading="lazy" />
+                <span>{project.category}</span>
+              </div>
+              {project.gallery && (
+                <div className="project__gallery" aria-label={`${project.title.replace('\n', ' ')}補充畫面`}>
+                  {project.gallery.map((item) => (
+                    <figure className="project__gallery-item" key={item.image}>
+                      <div>
+                        <img src={`/assets/${item.image}`} alt={item.alt} width="1600" height="1000" loading="lazy" />
+                      </div>
+                      <figcaption>{item.label}</figcaption>
+                    </figure>
+                  ))}
+                </div>
+              )}
             </div>
             <div className="project__content">
               <Eyebrow showDot>{project.eyebrow}</Eyebrow>
